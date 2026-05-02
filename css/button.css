@@ -1,0 +1,34 @@
+.btn-primary {
+    background-color: var(--gold-accent);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+
+    padding: 15px 16px;
+    border-radius: 3px;
+    font-family: 'eb garamond', serif;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-6px);
+    filter: brightness(90%);
+}
+
+.btn-secondary {
+    color: white;
+    font-family: 'eb garamond', serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(20px);
+    padding: 15px 16px;
+    border: 1px solid white;
+}
+
+.header-ctas {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-right: auto;
+}

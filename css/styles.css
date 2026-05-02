@@ -1,0 +1,281 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+:root {
+    --main-purple: #2b376e;
+    --main-white: #f9f9f9;
+    --gold-accent: #B38B45;
+}
+
+nav {
+    width: 100%;
+    max-width: 100%;
+    height: clamp(10vh, 14vh, 16vh);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    background-color: rgb(43, 55, 110, 0.8);
+    backdrop-filter: blur(10px);
+    margin: 0;
+    padding: 20px clamp(20px, 5vw, 60px);
+}
+
+nav .logo img {
+    max-width: clamp(120px, 25vw, 300px);
+    height: auto;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.nav-links li a {
+    font-size: 22px;
+    font-family: 'eb garamond', serif;
+    color: var(--main-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-links li a:hover {
+    color: var(--gold-accent);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+}
+
+.dropdown i {
+    font-size: 16px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover i {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    margin-top: 8px;
+    left: 0;
+    
+    background-color: #fff;
+    min-width: 280px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+    z-index: 10;
+    transition: all 0.5s ease;
+    padding: 10px 0;
+    list-style: none;
+    border-top: 3px solid var(--gold-accent);
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown-content li a {
+  color: #1a1a1a;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-content li a:hover {
+  background-color: #efefef;
+  color: var(--main-purple);
+}
+
+
+#more-link {
+    display: none;
+    padding: 10px clamp(12px, 2vw, 24px);
+
+    background: transparent;
+    color: var(--main-white);
+    border: 2px solid var(--main-white);
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+#sidebar {
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    z-index: 1000;
+
+    top: 0;
+    right: 0;
+
+    background-color: rgba(15, 23, 42, 0.85); /* 85% opacity Navy */
+    backdrop-filter: blur(15px); /* Premium frosted glass look */
+    border-left: 1px solid rgba(255, 255, 255, 0.1); /* Subtle edge line */
+
+    overflow-x: hidden;
+    display: block;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+    padding-top: 60px;
+}
+
+#sidebar.active {
+  transform: translateX(0);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+#sidebar .logo img {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.sidebar-links a {
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #ffffff;
+  display: block;
+  font-family: 'Inter', sans-serif;
+  transition: 0.3s;
+}
+
+.sidebar-links a:hover {
+  color: #C5A059; /* Your new Gold color */
+}
+
+.sidebar-footer {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#sidebar .sidebar-footer p {
+    font-size: 0.8rem;
+    font-family: 'inter', sans-serif;
+    color: white;
+    opacity: 0.6;
+}
+
+.sidebar-socials {
+    display: flex;
+    gap: 25px;
+}
+
+.sidebar-footer .sidebar-socials a i {
+    font-size: 25px;
+    color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    
+    /* The "Invisible" Logic */
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s, transform 0.2s ease, color 0.2s ease;
+}
+
+/* Show the button only when sidebar is active */
+#sidebar.active .close-btn {
+    opacity: 1;
+}
+
+.close-btn:hover {
+    color: #c5a059;
+    transform: rotate(90deg);
+}
+
+header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/landing.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 clamp(20px, 5vw, 60px);
+}
+
+h1 {
+    font-size: clamp(1.8rem, 8vw, 4.5rem);
+    font-family: 'eb garamond', serif;
+    color: var(--main-white);
+    margin: 0;
+    max-width: clamp(0, 80%, 80%);
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+header .subtitle {
+    color: var(--main-white);
+    opacity: 0.6;
+    line-height: 1.8;
+
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    font-family: 'inter', sans-serif;
+    max-width: 70%;
+}

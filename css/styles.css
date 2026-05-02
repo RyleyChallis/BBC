@@ -245,7 +245,7 @@ nav .nav-links {
 
 header {
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/landing.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/landing.webp");
 
     background-size: cover;
     background-repeat: no-repeat;

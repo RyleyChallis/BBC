@@ -28,7 +28,6 @@ nav {
     left: 0;
     right: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 
     background-color: rgb(43, 55, 110, 0.8);
     backdrop-filter: blur(10px);

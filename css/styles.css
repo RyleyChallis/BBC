@@ -228,12 +228,10 @@ nav .nav-links {
     padding: 10px;
     z-index: 1001;
     
-    /* The "Invisible" Logic */
     opacity: 0;
     transition: opacity 0.3s ease 0.2s, transform 0.2s ease, color 0.2s ease;
 }
 
-/* Show the button only when sidebar is active */
 #sidebar.active .close-btn {
     opacity: 1;
 }

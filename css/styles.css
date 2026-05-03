@@ -260,7 +260,7 @@ header {
 }
 
 h1 {
-    font-size: clamp(2.2rem, 8vw, 4.5rem);
+    font-size: clamp(1.8rem, 8vw, 5.3rem);
     font-family: 'eb garamond', serif;
     color: var(--main-white);
     margin: 0;
